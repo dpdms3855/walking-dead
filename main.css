@@ -1,0 +1,21 @@
+
+header{
+    height: 113px;
+    border-bottom: 1px solid black;
+}
+
+.fa-virus{
+    font-size: 40px;
+    color: red;
+    margin: 10px;
+}
+.main{
+    display: inline-block;
+    font-size: 25px;
+}
+
+.nav>ul{
+    display: inline-flex;
+    list-style: none;
+    
+}
