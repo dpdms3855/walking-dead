@@ -1,21 +1,240 @@
 
-header{
-    height: 113px;
-    border-bottom: 1px solid black;
+html,body{
+    margin: 0%;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+.main-logo{
+    background-color: white;
+    display: block;
+    
 }
 
 .fa-virus{
-    font-size: 40px;
+    font-size: 60px;
     color: red;
     margin: 10px;
+    padding: 50px;
+    z-index: 2;
 }
 .main{
     display: inline-block;
     font-size: 25px;
 }
 
-.nav>ul{
-    display: inline-flex;
+
+#nav{
+  list-style: none;
+  height: 40px;
+  padding: 5px 1px;
+  margin: 0;
+  background: #a1c4e0;
+  
+}
+#nav li{ /*전체 메뉴의 리스트에 대한 스타일*/
+    float: left; /*메뉴를 왼족부터 표시한다*/
+    position: relative; /*순서대로 표시한다*/
+    margin: 5px 30px;
+    padding: 0;
+
+}
+#nav li a{ /*메인 메뉴 링크의 스타일*/
+    display: block; /*메뉴탄을 블록 레벨로 만든다*/
+    font-family: "굴림";
+    font-weight: bold;
+    font-size: 18px;
+    padding: 7px 8px;
+    margin: 0;
+    text-decoration: none; /*글자의 밑줄 없애기*/
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5); /*글자에 그림자 삽입*/
+    color: black;
+    
+}
+#nav li:hover>a{ /*메인메뉴 링크에 마우스 포인터를 올렸을 때 스타일*/
+    background: rgb(180, 216, 233); /*배역색 지정*/
+    margin: 0;
+    padding: 5px;
+    transition: .4s;
+    border-radius: 10px;
+}
+#nav ul{ /*서브메뉴 스타일*/
+    list-style: none; /*불릿 없애기*/
+    margin: 0;
+    padding: 0;
+    position: absolute;/*고정 위치에 표시*/
+    left: 0;/*부모요소와 왼쪽 좌표값을 같게 한다*/
+    top: 40px;/*부모 요소로부터 45px 아래에 표시*/
+    width: 55px;  /*서브메뉴의 너비*/  
+    background-color: #d3e8fa;
+    text-align: center;
+    opacity: 0;/*투명하게 표시되도록 해서 평소에 안보이도옥 설정*/
+    z-index: 1;
+}
+#nav li:hover ul{ /*메인메뉴에 마우스 포인터를 올렸을 때 서브메뉴의 스타일*/
+    opacity: 1; /*서브메뉴 붙루명하게 설정*/
+    transition: .5s;
+}
+#nav li:hover ul li{/*마우스 포인터를 올려놨을 때 서브메뉴 스타일*/
+    height: 45px;
+    overflow: visible;/*영역을 넘어가는 내용이 있다면 표시*/
+    padding: 0;
+}
+
+
+
+#nav ul li{/*서브메뉴 리스트의 스타일*/
+    float: none;
+    padding: 0;
+    margin: 0;
+}
+#nav ul a{/*서브메뉴 리스트의 링크 스타일*/
+    font-weight: normal;
+}
+#nav ul li:hover a{/*서브메뉴 리스트로 마우스 포인터를 올렸을 떄의 스타일*/
+    background: rgb(226, 224, 224);
+    font-weight: bold;
+    transition: .4s;
+}
+
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+img{
+    width: 850px;
+    height: 100%;
+    margin: 30px 0 50px 30px;
+    padding: 15px;
+    border: 5px solid rgb(141, 196, 188);
+    border-radius: 20px;
+    
+}
+.map{
+    position: relative;
+}
+.fa-map-marker-alt{
+    color: red;
+    font-size: 20px;
+    position: absolute;
+}
+
+.korea {
+    position: absolute;
+    top: 177px;
+    left: 740px;
+}
+.number1{
+    position: absolute;
+    width: 70px;
+    height: 45px;
+    top: -42px;
+    left: -35px;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+.number1:hover{
+    font-weight: bold;
+}
+.usa{
+    position: absolute;
+    top: 177px;
+    left: 254px;
+}
+.number2{
+    content: "확진자 7,411명";
+    position: absolute;
+    width: 70px;
+    height: 45px;
+    top: -40px;
+    left: -20px;    
+    text-align: center;
+}
+.number2:hover{
+    font-weight: bold;
+}
+.japan{
+    position: absolute;
+    top: 179px;
+    left: 766px;
+}
+.number3{
+    position: absolute;
+    width: 80px;
+    height: 45px;
+    top: 18px;
+    left: -10px;
+    text-align: center;
+}
+.number3:hover{
+    font-weight: bold;
+}
+.italy{
+    position: absolute;
+    top: 162px;
+    left: 468px;
+}
+.number4{
+    position: absolute;
+    width: 80px;
+    height: 45px;
+    top: -40px;
+    left: -30px;
+    text-align: center;
+}
+.number4:hover{
+    font-weight: bold;
+}
+
+aside{
+    position: absolute;
+    right: 50px;
+    top: 240px;
+}
+aside h2{
+    border: 3px solid black;
+    padding: 10px;
+    margin: 10px;
+
+}
+
+aside>ul{
     list-style: none;
     
 }
+aside li{
+    margin-bottom: 20px;
+}
+
+aside ul li a{
+    text-decoration: none;
+    text-shadow: black(0 0 0 .4);
+    color: black;
+    font-size: 18px;
+}    
+
+aside ul li a:hover{
+    font-weight: bolder;
+    
+}
+
+footer{
+    padding: 20px 0; /*flex 주의사항: height를 지정하지 않는다. 대신 padding 값으로 재체*/
+    background: #333333;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: lighter;
+    /*position으로 푸터를 아래로 고정하기 위해서는 html을 뜯어고쳐야할수 있음.ex.contents class에서 footer만 빼놓고 해야하는 등. 따라서 그럴땐 flex로 푸터를 아래에 고정시켜야 한다. */
+}
+.contents{
+    flex: 1;
+}
+
+/*button type넣고 검색 창 만들기, 돋보기 모양 아이콘 넣기
+페이스북, 인스타, 트위터 아이콘 넣고 아이콘 넣고 링크 걸기
+지도에 before after로 hover하면 해당 국가 확진자 수 나오도록 하기
+빨간색 위치표 호버하면 위아래로 둥둥 tranform주기
+폰으로 찍어둔 사이트 참고해서 위치 아이콘에 말풍성 호버 뜨게끔 하기*/
